@@ -1,0 +1,152 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="form-style-10.css">
+</head>	
+	<div class="form-style-10">
+	<h1>Finding Right NoSQL database for Log Monitoring System<span> Fill up your requirement to find the best match of NoSQL database for your system</span></h1>
+
+<form>
+<fieldset>
+	<div class="section">
+	Dataset : <br>
+<select  id="select-field0" style="height : 30px;">
+<option value="data">NoSQL data (Logs) </option>
+</select>
+   <br>
+Operations :
+<select  id="select-field1" style="height : 30px;">
+<option value="500000">500,000</option>
+<option value="1 million">1 million</option>
+</select><br>
+
+ Nodes :
+ <select id="select-field2" style="height : 30px;">
+<option value="single"> Single  </option>
+<option value="five"> Five  </option>
+<option value="ten"> Ten  </option>
+<option value="fifteen"> Fifteen  </option>
+</select><br>
+  <br>
+
+<button type="button" onclick="myFunction()">Evaluate</button>
+<button type="button" onclick="refreshPage()">Refresh Page</button> <br>
+
+</form>
+</fieldset>
+
+<div class="section">
+<p id="demo"></p><br>
+
+</div>
+</div>
+</div>
+<script>
+
+function displayImage(image){
+	var img;
+	img = document.createElement("IMG");
+    img.setAttribute("src", image);
+    img.setAttribute("width", "900");
+    img.setAttribute("width", "950");
+    img.setAttribute("alt", "The Pulpit Rock");
+
+	document.body.appendChild(img);
+
+}
+
+function refreshPage(){
+    window.location.reload();
+}
+
+function displayLoadMin(){
+	var image = "LoadMin.png";
+	// var header = "NoSQL Load Phase Comparison 500000 workload";
+	// document.write(header.bold());
+	displayImage(image);
+}
+
+function displayLoadMax(){
+	var image = "LoadMax.png";
+	displayImage(image);
+}
+
+function displayRunMin(){
+	var image = "RunMin.png";
+	displayImage(image);
+}
+
+function displayRunMax(){
+	var image = "RunMax.png";
+	displayImage(image);
+}
+
+function myFunction () {
+	var val,nod;
+    val =  document.getElementById("select-field1").value;
+	nod =  document.getElementById("select-field2").value;
+
+	 if((nod=="single")&&(val=='500000')){
+	var image = "singleMin.png";
+	displayImage(image);
+	displayLoadMin();
+	displayRunMin();
+
+	} 
+	 if((nod=="five")&&(val=='500000')){
+	var image = "fiveMin.png";
+	displayImage(image);
+	displayLoadMin();
+	displayRunMin();
+
+	}
+	if((nod=="ten")&&(val=='500000')){
+	var image = "tenMin.png";
+	displayImage(image);
+	displayLoadMin();
+	displayRunMin();
+
+	}
+	if((nod=="fifteen")&&(val=='500000')){
+	var image = "fifteenMin.png";
+	displayImage(image);
+	displayLoadMin();
+	displayRunMin();
+
+	}
+	if((nod=="single")&&(val=='1 million')){
+	var image = "singleMax.png";
+	displayImage(image);
+	displayLoadMax();
+	displayRunMax();
+
+	}
+	if((nod=="five")&&(val=='1 million')){
+		
+	var image = "fiveMax.png";
+	displayImage(image);
+	displayLoadMax();
+	displayRunMax();
+
+	}
+	if((nod=="ten")&&(val=='1 million')){
+	var image = "tenMax.png";
+	displayImage(image);
+	displayLoadMax();
+	displayRunMax();
+
+	}
+	else if((nod=="fifteen")&&(val=='1 million')){
+	var image = "fifteenMax.png";
+	displayImage(image);
+	displayLoadMax();
+	displayRunMax();
+
+	}
+	else{
+		//document.getElementById("demo").innerHTML = "Invalid Input";
+	}
+
+}
+</script>
+
+</html>
